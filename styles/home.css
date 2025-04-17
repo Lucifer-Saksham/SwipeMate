@@ -1,0 +1,168 @@
+/* Home page styles */
+
+.home-container {
+  min-height: 100vh;
+  background-color: var(--dark-bg);
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.swipe-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  position: relative;
+  left: 0;
+}
+
+.swipe-button {
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.swipe-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.swipe-button.like {
+  background-color: #10b981;
+  color: white;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+}
+
+.swipe-button.dislike {
+  background-color: #800020;
+  color: white;
+}
+
+.swipe-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.swipe-button.like:hover:not(:disabled) {
+  box-shadow: 0 6px 15px rgba(16, 185, 129, 0.4);
+}
+
+.swipe-button.dislike:hover:not(:disabled) {
+  box-shadow: 0 6px 15px rgba(239, 68, 68, 0.4);
+}
+
+.no-more-properties {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-more-properties h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.no-more-properties p {
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+.no-more-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reset-button,
+.favorites-button {
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.reset-button {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.favorites-button {
+  background: linear-gradient(45deg, #f59e0b, #ef4444);
+  color: white;
+}
+
+.reset-button:hover,
+.favorites-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.property-card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    min-height: 470px;
+  }
+
+  .swipe-button {
+    padding: 0.85rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  .swipe-controls {
+    gap: 1.5rem;
+  }
+}

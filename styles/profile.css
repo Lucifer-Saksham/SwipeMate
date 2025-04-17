@@ -1,0 +1,419 @@
+/* Profile page styles */
+
+.profile-container {
+  min-height: 100vh;
+  background-color: #121212;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.main-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1rem;
+  box-sizing: border-box;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #333;
+}
+
+.profile-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.edit-controls {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.edit-button,
+.save-button,
+.cancel-button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.edit-button {
+  background-color: #800020;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #6d001c;
+}
+
+.save-button {
+  background-color: #10b981;
+  color: white;
+}
+
+.save-button:hover {
+  background-color: #0e9f6e;
+}
+
+.cancel-button {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+.cancel-button:hover {
+  background-color: #3d3d3d;
+}
+
+.profile-card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section {
+  padding: 1.5rem;
+  border-bottom: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section h2 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  position: relative;
+  font-weight: 600;
+  text-align: center;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.section h2:after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #800020;
+  border-radius: 2px;
+}
+
+/* Property preferences and Personal information section header alignment */
+.profile-card:nth-child(2) .section h2,
+.profile-card:nth-child(3) .section h2 {
+  text-align: left;
+  padding-left: 527px; /* Align with content - places it over the info values */
+}
+
+/* Align the lines with their headings */
+.profile-card:nth-child(2) .section h2:after,
+.profile-card:nth-child(3) .section h2:after {
+  left: 554px;
+  transform: none;
+  width: 140px;
+}
+
+/* Keep contact section with smaller underline */
+.contact-section h2 {
+  text-align: center;
+  padding-left: 0;
+}
+
+.contact-section h2:after {
+  width: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0;
+  margin-right: 1rem;
+  color: #b0b0b0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  min-width: 120px;
+  width: 120px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.form-group label::after {
+  content: " :";
+}
+
+.info-value {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  word-break: break-word;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+input,
+select {
+  flex-grow: 1;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background-color: #2d2d2d;
+  color: white;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #800020;
+  box-shadow: 0 0 0 1px rgba(128, 0, 32, 0.2);
+}
+
+.location-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+.location-input-group {
+  display: flex;
+  gap: 0.7rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.location-input-group input {
+  flex: 1;
+  min-width: 0;
+}
+
+.remove-btn {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #ff4d4d;
+  border: none;
+  border-radius: 8px;
+  padding: 0 0.8rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-btn:hover {
+  background-color: rgba(239, 68, 68, 0.25);
+}
+
+.remove-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.add-location-btn {
+  background-color: transparent;
+  border: 1px dashed #444;
+  color: #b0b0b0;
+  padding: 0.8rem;
+  margin-top: 0.7rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 0.95rem;
+}
+
+.add-location-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.property-type-checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.checkbox-group:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #800020;
+}
+
+.contact-section {
+  margin-top: 1.5rem;
+}
+
+.contact-section h2 {
+  margin-left: 0;
+  padding-left: 0;
+  text-align: center;
+}
+
+.contact-info {
+  color: #b0b0b0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-info p {
+  margin-bottom: 0.7rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    max-width: 100%;
+    padding: 1.2rem;
+  }
+
+  .profile-card:nth-child(2) .section h2,
+  .profile-card:nth-child(3) .section h2 {
+    padding-left: 150px;
+  }
+
+  .profile-card:nth-child(2) .section h2:after,
+  .profile-card:nth-child(3) .section h2:after {
+    left: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-container {
+    padding: 10px;
+  }
+
+  .main-content {
+    padding: 1rem 0.75rem;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-header h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .section {
+    padding: 1.2rem;
+  }
+
+  .section h2 {
+    font-size: 1.1rem;
+    text-align: center;
+    padding-left: 0 !important;
+  }
+
+  .section h2:after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .edit-button,
+  .save-button,
+  .cancel-button {
+    padding: 7px 14px;
+    font-size: 0.85rem;
+  }
+
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-group label {
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+    min-width: auto;
+    width: 100%;
+    text-align: left;
+  }
+
+  .info-value,
+  input,
+  select {
+    width: 100%;
+  }
+}

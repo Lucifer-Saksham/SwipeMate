@@ -1,0 +1,9 @@
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="200" fill="#1e1e1e"/>
+  <text x="200" y="100" font-family="Arial" font-size="20" fill="white" text-anchor="middle" dominant-baseline="middle">Property Image</text>
+  <g fill="none" stroke="white" stroke-width="2">
+    <rect x="50" y="40" width="300" height="120" rx="5"/>
+    <path d="M50,120 L150,80 L200,130 L275,60 L350,120" stroke-linecap="round"/>
+    <circle cx="310" cy="70" r="15"/>
+  </g>
+</svg> 
