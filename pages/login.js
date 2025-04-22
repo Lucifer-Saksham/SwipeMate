@@ -25,7 +25,6 @@ export default function Login() {
     e.preventDefault();
     setError("");
 
-    // Simple validation
     if (!formData.email || !formData.password) {
       setError("Please fill in all fields");
       return;
@@ -35,9 +34,6 @@ export default function Login() {
       setError("Please provide your name");
       return;
     }
-
-    // For demo purposes, just redirect to home
-    // In a real app, you would handle authentication here
     router.push("/home");
   };
 

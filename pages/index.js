@@ -10,15 +10,12 @@ export default function Home() {
   const [showButtons, setShowButtons] = useState(false);
 
   useEffect(() => {
-    // Start with loading animation
     const animationTimer = setTimeout(() => {
       setAnimationComplete(true);
-
-      // Show buttons after animation completes with minimal delay
       setTimeout(() => {
         setShowButtons(true);
-      }, 300); // Reduced from 1000ms to 300ms to minimize lag
-    }, 3000); // 3 seconds for loading animation
+      }, 300);
+    }, 3000);
 
     return () => clearTimeout(animationTimer);
   }, []);

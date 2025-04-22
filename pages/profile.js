@@ -102,23 +102,6 @@ export default function Profile() {
     setIsEditing(false);
   };
 
-  const clearFavorites = () => {
-    localStorage.removeItem("likedProperties");
-    alert("All favorite properties have been cleared");
-  };
-
-  const [activeTab, setActiveTab] = useState("personal");
-
-  const getPreferenceValue = (name) => {
-    // ... existing code ...
-  };
-
-  const handleEditToggle = () => {
-    // ... existing code ...
-  };
-
-  const [currentTheme, setTheme] = useState("light");
-
   return (
     <div className="profile-container">
       <Head>

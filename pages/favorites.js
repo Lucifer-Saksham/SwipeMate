@@ -18,14 +18,11 @@ export default function Favorites() {
   const router = useRouter();
 
   useEffect(() => {
-    // Load liked properties from localStorage
     const storedLikedProperties = localStorage.getItem("likedProperties");
     if (storedLikedProperties) {
       try {
         const parsed = JSON.parse(storedLikedProperties);
         const properties = Array.isArray(parsed) ? parsed : [];
-
-        // Ensure each property has images array
         const propertiesWithImages = properties.map((property) => {
           if (!property.images) {
             property.images = [
@@ -38,8 +35,6 @@ export default function Favorites() {
         });
 
         setLikedProperties(propertiesWithImages);
-
-        // Initialize image indices
         const imageIndices = {};
         propertiesWithImages.forEach((property) => {
           imageIndices[property.id] = 0;
@@ -58,11 +53,7 @@ export default function Favorites() {
       (property) => property.id !== id
     );
     setLikedProperties(updatedProperties);
-
-    // Update localStorage
     localStorage.setItem("likedProperties", JSON.stringify(updatedProperties));
-
-    // Update image indices
     const updatedIndices = { ...currentImageIndices };
     delete updatedIndices[id];
     setCurrentImageIndices(updatedIndices);
@@ -102,7 +93,6 @@ export default function Favorites() {
     });
   };
 
-  // Helper function to get the current image for a property
   const getCurrentImage = (property) => {
     if (!property) return "";
     if (!property.images || property.images.length === 0) return property.image;

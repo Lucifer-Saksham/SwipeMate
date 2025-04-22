@@ -4,7 +4,6 @@ import Navbar from "../components/Navbar";
 import PropertyCard from "../components/PropertyCard";
 import { useRouter } from "next/router";
 
-// Sample data for properties
 const propertyData = [
   {
     id: 1,
@@ -161,17 +160,12 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    // Initialize properties
     setProperties(propertyData);
-
-    // Load liked properties from localStorage if available
     const storedLikedProperties = localStorage.getItem("likedProperties");
     if (storedLikedProperties) {
       setLikedProperties(JSON.parse(storedLikedProperties));
     }
   }, []);
-
-  // Save liked properties to localStorage whenever it changes
   useEffect(() => {
     if (likedProperties.length > 0) {
       localStorage.setItem("likedProperties", JSON.stringify(likedProperties));
@@ -181,7 +175,6 @@ export default function Home() {
   }, [likedProperties]);
 
   const handleSwipeLeft = (id) => {
-    // Go to next property
     setCurrentIndex((prevIndex) => {
       const newIndex = prevIndex + 1;
       if (newIndex >= properties.length) {
@@ -192,10 +185,8 @@ export default function Home() {
   };
 
   const handleSwipeRight = (id) => {
-    // Add the property to liked properties
     const likedProperty = properties.find((property) => property.id === id);
     if (likedProperty) {
-      // Check if the property is already in liked properties to prevent duplicates
       const isDuplicate = likedProperties.some(
         (property) => property.id === id
       );
@@ -203,8 +194,6 @@ export default function Home() {
         setLikedProperties((prev) => [...prev, likedProperty]);
       }
     }
-
-    // Go to next property
     setCurrentIndex((prevIndex) => {
       const newIndex = prevIndex + 1;
       if (newIndex >= properties.length) {
