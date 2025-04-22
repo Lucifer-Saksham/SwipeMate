@@ -11,13 +11,8 @@ const Navbar = () => {
     sortBy: "",
   });
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const toggleFilter = () => {
-    setIsFilterOpen(!isFilterOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleFilter = () => setIsFilterOpen(!isFilterOpen);
 
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
@@ -28,10 +23,8 @@ const Navbar = () => {
   };
 
   const applyFilters = () => {
-    // Here you would apply the filters to your data
     console.log("Applying filters:", filters);
     setIsFilterOpen(false);
-    // Implementation would depend on how your app manages state
   };
 
   return (

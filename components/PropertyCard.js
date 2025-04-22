@@ -6,7 +6,6 @@ const PropertyCard = forwardRef(
     const cardRef = useRef(null);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-    // Expose methods via ref
     useEffect(() => {
       if (ref) {
         ref.current = {
@@ -32,7 +31,6 @@ const PropertyCard = forwardRef(
       );
     };
 
-    // Use the image from the images array if available, otherwise use the fallback image
     const displayImage = property.images?.[currentImageIndex] || property.image;
 
     return (
